@@ -1,0 +1,1675 @@
+meta:
+  resolution: 0.04
+  origin:
+    x: -16.0
+    y: -12.0
+  map_height_px: 600
+rooms:
+- name: living_room
+  label: room0
+  bbox_px:
+  - 100
+  - 30
+  - 450
+  - 230
+  ros:
+    center:
+      x: -5.0
+      y: 6.8
+    size:
+      width: 14.0
+      height: 8.0
+- name: medium_bedroom
+  label: room1
+  bbox_px:
+  - 470
+  - 30
+  - 700
+  - 230
+  ros:
+    center:
+      x: 7.4
+      y: 6.8
+    size:
+      width: 9.2
+      height: 8.0
+- name: kitchen
+  label: room2
+  bbox_px:
+  - 30
+  - 300
+  - 250
+  - 570
+  ros:
+    center:
+      x: -10.4
+      y: -5.4
+    size:
+      width: 8.8
+      height: 10.8
+- name: bathroom
+  label: room3
+  bbox_px:
+  - 270
+  - 300
+  - 470
+  - 570
+  ros:
+    center:
+      x: -1.2
+      y: -5.4
+    size:
+      width: 8.0
+      height: 10.8
+- name: large_bedroom
+  label: room4
+  bbox_px:
+  - 490
+  - 300
+  - 770
+  - 570
+  ros:
+    center:
+      x: 9.2
+      y: -5.4
+    size:
+      width: 11.2
+      height: 10.8
+doors:
+- id: door_0
+  name: living_to_corridor
+  bbox_px:
+  - 263
+  - 226
+  - 287
+  - 230
+  ros:
+    center:
+      x: -5.0
+      y: 2.88
+    size:
+      width: 0.96
+      height: 0.16
+- id: door_1
+  name: medium_to_corridor
+  bbox_px:
+  - 573
+  - 226
+  - 597
+  - 230
+  ros:
+    center:
+      x: 7.4
+      y: 2.88
+    size:
+      width: 0.96
+      height: 0.16
+- id: door_2
+  name: kitchen_to_corridor
+  bbox_px:
+  - 128
+  - 300
+  - 152
+  - 304
+  ros:
+    center:
+      x: -10.4
+      y: -0.08
+    size:
+      width: 0.96
+      height: 0.16
+- id: door_3
+  name: bathroom_to_corridor
+  bbox_px:
+  - 358
+  - 300
+  - 382
+  - 304
+  ros:
+    center:
+      x: -1.2
+      y: -0.08
+    size:
+      width: 0.96
+      height: 0.16
+- id: door_4
+  name: large_to_corridor
+  bbox_px:
+  - 618
+  - 300
+  - 642
+  - 304
+  ros:
+    center:
+      x: 9.2
+      y: -0.08
+    size:
+      width: 0.96
+      height: 0.16
+objects:
+- name: sofa
+  room: room0
+  bbox_px:
+  - 120
+  - 50
+  - 190
+  - 80
+  ros:
+    center:
+      x: -9.8
+      y: 9.4
+    size:
+      width: 2.8
+      height: 1.2
+- name: tea_table
+  room: room0
+  bbox_px:
+  - 140
+  - 90
+  - 160
+  - 110
+  ros:
+    center:
+      x: -10.0
+      y: 8.0
+    size:
+      width: 0.8
+      height: 0.8
+- name: cup
+  room: room0
+  bbox_px:
+  - 150
+  - 100
+  - 155
+  - 105
+  ros:
+    center:
+      x: -9.9
+      y: 7.9
+    size:
+      width: 0.2
+      height: 0.2
+- name: side_table
+  room: room0
+  bbox_px:
+  - 210
+  - 50
+  - 230
+  - 70
+  ros:
+    center:
+      x: -7.2
+      y: 9.6
+    size:
+      width: 0.8
+      height: 0.8
+- name: tv_stand
+  room: room0
+  bbox_px:
+  - 110
+  - 150
+  - 190
+  - 160
+  ros:
+    center:
+      x: -10.0
+      y: 5.8
+    size:
+      width: 3.2
+      height: 0.4
+- name: tv
+  room: room0
+  bbox_px:
+  - 120
+  - 140
+  - 180
+  - 150
+  ros:
+    center:
+      x: -10.0
+      y: 6.2
+    size:
+      width: 2.4
+      height: 0.4
+- name: bookshelf
+  room: room0
+  bbox_px:
+  - 130
+  - 170
+  - 150
+  - 220
+  ros:
+    center:
+      x: -10.4
+      y: 4.2
+    size:
+      width: 0.8
+      height: 2.0
+- name: book1
+  room: room0
+  bbox_px:
+  - 135
+  - 175
+  - 145
+  - 180
+  ros:
+    center:
+      x: -10.4
+      y: 4.9
+    size:
+      width: 0.4
+      height: 0.2
+- name: book2
+  room: room0
+  bbox_px:
+  - 135
+  - 185
+  - 145
+  - 190
+  ros:
+    center:
+      x: -10.4
+      y: 4.5
+    size:
+      width: 0.4
+      height: 0.2
+- name: dining_table
+  room: room0
+  bbox_px:
+  - 280
+  - 100
+  - 350
+  - 120
+  ros:
+    center:
+      x: -3.4
+      y: 7.6
+    size:
+      width: 2.8
+      height: 0.8
+- name: dining_chair1
+  room: room0
+  bbox_px:
+  - 270
+  - 90
+  - 280
+  - 100
+  ros:
+    center:
+      x: -5.0
+      y: 8.2
+    size:
+      width: 0.4
+      height: 0.4
+- name: dining_chair2
+  room: room0
+  bbox_px:
+  - 350
+  - 90
+  - 360
+  - 100
+  ros:
+    center:
+      x: -1.8
+      y: 8.2
+    size:
+      width: 0.4
+      height: 0.4
+- name: dining_chair3
+  room: room0
+  bbox_px:
+  - 270
+  - 120
+  - 280
+  - 130
+  ros:
+    center:
+      x: -5.0
+      y: 7.0
+    size:
+      width: 0.4
+      height: 0.4
+- name: dining_chair4
+  room: room0
+  bbox_px:
+  - 350
+  - 120
+  - 360
+  - 130
+  ros:
+    center:
+      x: -1.8
+      y: 7.0
+    size:
+      width: 0.4
+      height: 0.4
+- name: plate
+  room: room0
+  bbox_px:
+  - 300
+  - 110
+  - 310
+  - 115
+  ros:
+    center:
+      x: -3.8
+      y: 7.5
+    size:
+      width: 0.4
+      height: 0.2
+- name: cup2
+  room: room0
+  bbox_px:
+  - 315
+  - 110
+  - 320
+  - 115
+  ros:
+    center:
+      x: -3.3
+      y: 7.5
+    size:
+      width: 0.2
+      height: 0.2
+- name: fork
+  room: room0
+  bbox_px:
+  - 305
+  - 116
+  - 310
+  - 118
+  ros:
+    center:
+      x: -3.7
+      y: 7.32
+    size:
+      width: 0.2
+      height: 0.08
+- name: vase
+  room: room0
+  bbox_px:
+  - 380
+  - 50
+  - 385
+  - 60
+  ros:
+    center:
+      x: -0.7
+      y: 9.8
+    size:
+      width: 0.2
+      height: 0.4
+- name: mirror
+  room: room0
+  bbox_px:
+  - 390
+  - 70
+  - 420
+  - 90
+  ros:
+    center:
+      x: 0.2
+      y: 8.8
+    size:
+      width: 1.2
+      height: 0.8
+- name: trash_can
+  room: room0
+  bbox_px:
+  - 380
+  - 150
+  - 390
+  - 160
+  ros:
+    center:
+      x: -0.6
+      y: 5.8
+    size:
+      width: 0.4
+      height: 0.4
+- name: coat_rack
+  room: room0
+  bbox_px:
+  - 400
+  - 180
+  - 405
+  - 200
+  ros:
+    center:
+      x: 0.1
+      y: 4.4
+    size:
+      width: 0.2
+      height: 0.8
+- name: coat
+  room: room0
+  bbox_px:
+  - 395
+  - 185
+  - 410
+  - 195
+  ros:
+    center:
+      x: 0.1
+      y: 4.4
+    size:
+      width: 0.6
+      height: 0.4
+- name: hat
+  room: room0
+  bbox_px:
+  - 407
+  - 175
+  - 412
+  - 180
+  ros:
+    center:
+      x: 0.38
+      y: 4.9
+    size:
+      width: 0.2
+      height: 0.2
+- name: water_dispenser
+  room: room0
+  bbox_px:
+  - 420
+  - 150
+  - 440
+  - 170
+  ros:
+    center:
+      x: 1.2
+      y: 5.6
+    size:
+      width: 0.8
+      height: 0.8
+- name: cup3
+  room: room0
+  bbox_px:
+  - 430
+  - 140
+  - 435
+  - 145
+  ros:
+    center:
+      x: 1.3
+      y: 6.3
+    size:
+      width: 0.2
+      height: 0.2
+- name: door_room0
+  room: room0
+  bbox_px:
+  - 263
+  - 226
+  - 287
+  - 230
+  ros:
+    center:
+      x: -5.0
+      y: 2.88
+    size:
+      width: 0.96
+      height: 0.16
+- name: wardrobe
+  room: room1
+  bbox_px:
+  - 480
+  - 60
+  - 520
+  - 180
+  ros:
+    center:
+      x: 4.0
+      y: 7.2
+    size:
+      width: 1.6
+      height: 4.8
+- name: shirt
+  room: room1
+  bbox_px:
+  - 485
+  - 50
+  - 515
+  - 70
+  ros:
+    center:
+      x: 4.0
+      y: 9.6
+    size:
+      width: 1.2
+      height: 0.8
+- name: pants
+  room: room1
+  bbox_px:
+  - 485
+  - 80
+  - 515
+  - 100
+  ros:
+    center:
+      x: 4.0
+      y: 8.4
+    size:
+      width: 1.2
+      height: 0.8
+- name: coat2
+  room: room1
+  bbox_px:
+  - 485
+  - 110
+  - 515
+  - 130
+  ros:
+    center:
+      x: 4.0
+      y: 7.2
+    size:
+      width: 1.2
+      height: 0.8
+- name: dresser
+  room: room1
+  bbox_px:
+  - 480
+  - 210
+  - 520
+  - 220
+  ros:
+    center:
+      x: 4.0
+      y: 3.4
+    size:
+      width: 1.6
+      height: 0.4
+- name: chair
+  room: room1
+  bbox_px:
+  - 530
+  - 210
+  - 540
+  - 220
+  ros:
+    center:
+      x: 5.4
+      y: 3.4
+    size:
+      width: 0.4
+      height: 0.4
+- name: mirror2
+  room: room1
+  bbox_px:
+  - 490
+  - 200
+  - 510
+  - 210
+  ros:
+    center:
+      x: 4.0
+      y: 3.8
+    size:
+      width: 0.8
+      height: 0.4
+- name: comb
+  room: room1
+  bbox_px:
+  - 495
+  - 205
+  - 500
+  - 208
+  ros:
+    center:
+      x: 3.9
+      y: 3.74
+    size:
+      width: 0.2
+      height: 0.12
+- name: lamp
+  room: room1
+  bbox_px:
+  - 505
+  - 205
+  - 510
+  - 210
+  ros:
+    center:
+      x: 4.3
+      y: 3.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: bed
+  room: room1
+  bbox_px:
+  - 570
+  - 80
+  - 670
+  - 180
+  ros:
+    center:
+      x: 8.8
+      y: 6.8
+    size:
+      width: 4.0
+      height: 4.0
+- name: pillow
+  room: room1
+  bbox_px:
+  - 570
+  - 90
+  - 590
+  - 110
+  ros:
+    center:
+      x: 7.2
+      y: 8.0
+    size:
+      width: 0.8
+      height: 0.8
+- name: quilt
+  room: room1
+  bbox_px:
+  - 560
+  - 120
+  - 680
+  - 170
+  ros:
+    center:
+      x: 8.8
+      y: 6.2
+    size:
+      width: 4.8
+      height: 2.0
+- name: left_nightstand
+  room: room1
+  bbox_px:
+  - 540
+  - 100
+  - 550
+  - 120
+  ros:
+    center:
+      x: 5.8
+      y: 7.6
+    size:
+      width: 0.4
+      height: 0.8
+- name: left_lamp
+  room: room1
+  bbox_px:
+  - 545
+  - 95
+  - 548
+  - 100
+  ros:
+    center:
+      x: 5.86
+      y: 8.1
+    size:
+      width: 0.12
+      height: 0.2
+- name: alarm_clock
+  room: room1
+  bbox_px:
+  - 545
+  - 122
+  - 550
+  - 125
+  ros:
+    center:
+      x: 5.9
+      y: 7.06
+    size:
+      width: 0.2
+      height: 0.12
+- name: right_nightstand
+  room: room1
+  bbox_px:
+  - 680
+  - 100
+  - 690
+  - 120
+  ros:
+    center:
+      x: 11.4
+      y: 7.6
+    size:
+      width: 0.4
+      height: 0.8
+- name: right_lamp
+  room: room1
+  bbox_px:
+  - 695
+  - 95
+  - 698
+  - 100
+  ros:
+    center:
+      x: 11.86
+      y: 8.1
+    size:
+      width: 0.12
+      height: 0.2
+- name: scale
+  room: room1
+  bbox_px:
+  - 625
+  - 185
+  - 645
+  - 190
+  ros:
+    center:
+      x: 9.4
+      y: 4.5
+    size:
+      width: 0.8
+      height: 0.2
+- name: air_conditioner
+  room: room1
+  bbox_px:
+  - 620
+  - 210
+  - 650
+  - 220
+  ros:
+    center:
+      x: 9.4
+      y: 3.4
+    size:
+      width: 1.2
+      height: 0.4
+- name: door_room1
+  room: room1
+  bbox_px:
+  - 573
+  - 226
+  - 597
+  - 230
+  ros:
+    center:
+      x: 7.4
+      y: 2.88
+    size:
+      width: 0.96
+      height: 0.16
+- name: door_room2
+  room: room2
+  bbox_px:
+  - 128
+  - 300
+  - 152
+  - 304
+  ros:
+    center:
+      x: -10.4
+      y: -0.08
+    size:
+      width: 0.96
+      height: 0.16
+- name: door_room3
+  room: room3
+  bbox_px:
+  - 358
+  - 300
+  - 382
+  - 304
+  ros:
+    center:
+      x: -1.2
+      y: -0.08
+    size:
+      width: 0.96
+      height: 0.16
+- name: door_room4
+  room: room4
+  bbox_px:
+  - 618
+  - 300
+  - 642
+  - 304
+  ros:
+    center:
+      x: 9.2
+      y: -0.08
+    size:
+      width: 0.96
+      height: 0.16
+- name: cabinet_horizontal
+  room: room2
+  bbox_px:
+  - 40
+  - 320
+  - 100
+  - 350
+  ros:
+    center:
+      x: -13.2
+      y: -1.4
+    size:
+      width: 2.4
+      height: 1.2
+- name: cabinet_vertical
+  room: room2
+  bbox_px:
+  - 40
+  - 350
+  - 60
+  - 450
+  ros:
+    center:
+      x: -14.0
+      y: -4.0
+    size:
+      width: 0.8
+      height: 4.0
+- name: stove
+  room: room2
+  bbox_px:
+  - 70
+  - 360
+  - 90
+  - 380
+  ros:
+    center:
+      x: -12.8
+      y: -2.8
+    size:
+      width: 0.8
+      height: 0.8
+- name: tap
+  room: room2
+  bbox_px:
+  - 85
+  - 360
+  - 95
+  - 365
+  ros:
+    center:
+      x: -12.4
+      y: -2.5
+    size:
+      width: 0.4
+      height: 0.2
+- name: range_hood
+  room: room2
+  bbox_px:
+  - 65
+  - 340
+  - 95
+  - 350
+  ros:
+    center:
+      x: -12.8
+      y: -1.8
+    size:
+      width: 1.2
+      height: 0.4
+- name: microwave
+  room: room2
+  bbox_px:
+  - 100
+  - 360
+  - 120
+  - 380
+  ros:
+    center:
+      x: -11.6
+      y: -2.8
+    size:
+      width: 0.8
+      height: 0.8
+- name: oven
+  room: room2
+  bbox_px:
+  - 70
+  - 390
+  - 90
+  - 410
+  ros:
+    center:
+      x: -12.8
+      y: -4.0
+    size:
+      width: 0.8
+      height: 0.8
+- name: dishwasher
+  room: room2
+  bbox_px:
+  - 70
+  - 420
+  - 90
+  - 450
+  ros:
+    center:
+      x: -12.8
+      y: -5.4
+    size:
+      width: 0.8
+      height: 1.2
+- name: bowl1
+  room: room2
+  bbox_px:
+  - 80
+  - 430
+  - 85
+  - 435
+  ros:
+    center:
+      x: -12.7
+      y: -5.3
+    size:
+      width: 0.2
+      height: 0.2
+- name: fridge
+  room: room2
+  bbox_px:
+  - 40
+  - 460
+  - 80
+  - 540
+  ros:
+    center:
+      x: -13.6
+      y: -8.0
+    size:
+      width: 1.6
+      height: 3.2
+- name: apple
+  room: room2
+  bbox_px:
+  - 85
+  - 470
+  - 90
+  - 475
+  ros:
+    center:
+      x: -12.5
+      y: -6.9
+    size:
+      width: 0.2
+      height: 0.2
+- name: banana
+  room: room2
+  bbox_px:
+  - 85
+  - 480
+  - 90
+  - 485
+  ros:
+    center:
+      x: -12.5
+      y: -7.3
+    size:
+      width: 0.2
+      height: 0.2
+- name: vegetables
+  room: room2
+  bbox_px:
+  - 85
+  - 490
+  - 90
+  - 500
+  ros:
+    center:
+      x: -12.5
+      y: -7.8
+    size:
+      width: 0.2
+      height: 0.4
+- name: table_center
+  room: room2
+  bbox_px:
+  - 150
+  - 400
+  - 230
+  - 430
+  ros:
+    center:
+      x: -8.4
+      y: -4.6
+    size:
+      width: 3.2
+      height: 1.2
+- name: cutting_board
+  room: room2
+  bbox_px:
+  - 160
+  - 435
+  - 180
+  - 445
+  ros:
+    center:
+      x: -9.2
+      y: -5.6
+    size:
+      width: 0.8
+      height: 0.4
+- name: knife
+  room: room2
+  bbox_px:
+  - 185
+  - 435
+  - 190
+  - 445
+  ros:
+    center:
+      x: -8.5
+      y: -5.6
+    size:
+      width: 0.2
+      height: 0.4
+- name: pan
+  room: room2
+  bbox_px:
+  - 200
+  - 435
+  - 220
+  - 450
+  ros:
+    center:
+      x: -7.6
+      y: -5.7
+    size:
+      width: 0.8
+      height: 0.6
+- name: scale
+  room: room2
+  bbox_px:
+  - 155
+  - 390
+  - 165
+  - 400
+  ros:
+    center:
+      x: -9.6
+      y: -3.8
+    size:
+      width: 0.4
+      height: 0.4
+- name: spoon
+  room: room2
+  bbox_px:
+  - 170
+  - 390
+  - 175
+  - 395
+  ros:
+    center:
+      x: -9.1
+      y: -3.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: chopsticks
+  room: room2
+  bbox_px:
+  - 180
+  - 390
+  - 185
+  - 395
+  ros:
+    center:
+      x: -8.7
+      y: -3.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: plate
+  room: room2
+  bbox_px:
+  - 160
+  - 440
+  - 170
+  - 450
+  ros:
+    center:
+      x: -9.4
+      y: -5.8
+    size:
+      width: 0.4
+      height: 0.4
+- name: bowl2
+  room: room2
+  bbox_px:
+  - 175
+  - 440
+  - 180
+  - 445
+  ros:
+    center:
+      x: -8.9
+      y: -5.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: cup4
+  room: room2
+  bbox_px:
+  - 185
+  - 440
+  - 190
+  - 445
+  ros:
+    center:
+      x: -8.5
+      y: -5.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: trash_can2
+  room: room2
+  bbox_px:
+  - 180
+  - 460
+  - 200
+  - 480
+  ros:
+    center:
+      x: -8.4
+      y: -6.8
+    size:
+      width: 0.8
+      height: 0.8
+- name: coffee_machine
+  room: room2
+  bbox_px:
+  - 140
+  - 450
+  - 160
+  - 470
+  ros:
+    center:
+      x: -10.0
+      y: -6.4
+    size:
+      width: 0.8
+      height: 0.8
+- name: shower
+  room: room3
+  bbox_px:
+  - 280
+  - 360
+  - 290
+  - 370
+  ros:
+    center:
+      x: -4.6
+      y: -2.6
+    size:
+      width: 0.4
+      height: 0.4
+- name: bath_mirror
+  room: room3
+  bbox_px:
+  - 300
+  - 360
+  - 330
+  - 390
+  ros:
+    center:
+      x: -3.4
+      y: -3.0
+    size:
+      width: 1.2
+      height: 1.2
+- name: soap
+  room: room3
+  bbox_px:
+  - 335
+  - 365
+  - 340
+  - 370
+  ros:
+    center:
+      x: -2.5
+      y: -2.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: shampoo
+  room: room3
+  bbox_px:
+  - 335
+  - 375
+  - 340
+  - 380
+  ros:
+    center:
+      x: -2.5
+      y: -3.1
+    size:
+      width: 0.2
+      height: 0.2
+- name: bath_cabinet
+  room: room3
+  bbox_px:
+  - 280
+  - 400
+  - 320
+  - 420
+  ros:
+    center:
+      x: -4.0
+      y: -4.4
+    size:
+      width: 1.6
+      height: 0.8
+- name: facial_cleanser
+  room: room3
+  bbox_px:
+  - 285
+  - 405
+  - 290
+  - 410
+  ros:
+    center:
+      x: -4.5
+      y: -4.3
+    size:
+      width: 0.2
+      height: 0.2
+- name: toothbrush_paste
+  room: room3
+  bbox_px:
+  - 295
+  - 405
+  - 300
+  - 410
+  ros:
+    center:
+      x: -4.1
+      y: -4.3
+    size:
+      width: 0.2
+      height: 0.2
+- name: washing_machine
+  room: room3
+  bbox_px:
+  - 420
+  - 360
+  - 450
+  - 410
+  ros:
+    center:
+      x: 1.4
+      y: -3.4
+    size:
+      width: 1.2
+      height: 2.0
+- name: dirty_clothes
+  room: room3
+  bbox_px:
+  - 420
+  - 420
+  - 450
+  - 430
+  ros:
+    center:
+      x: 1.4
+      y: -5.0
+    size:
+      width: 1.2
+      height: 0.4
+- name: toilet
+  room: room3
+  bbox_px:
+  - 340
+  - 500
+  - 380
+  - 550
+  ros:
+    center:
+      x: -1.6
+      y: -9.0
+    size:
+      width: 1.6
+      height: 2.0
+- name: disinfectant
+  room: room3
+  bbox_px:
+  - 335
+  - 490
+  - 340
+  - 495
+  ros:
+    center:
+      x: -2.5
+      y: -7.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: toilet_paper
+  room: room3
+  bbox_px:
+  - 385
+  - 490
+  - 390
+  - 495
+  ros:
+    center:
+      x: -0.5
+      y: -7.7
+    size:
+      width: 0.2
+      height: 0.2
+- name: wardrobe2
+  room: room4
+  bbox_px:
+  - 520
+  - 310
+  - 560
+  - 450
+  ros:
+    center:
+      x: 5.6
+      y: -3.2
+    size:
+      width: 1.6
+      height: 5.6
+- name: fitting_mirror
+  room: room4
+  bbox_px:
+  - 565
+  - 310
+  - 590
+  - 350
+  ros:
+    center:
+      x: 7.1
+      y: -1.2
+    size:
+      width: 1.0
+      height: 1.6
+- name: shirt2
+  room: room4
+  bbox_px:
+  - 525
+  - 320
+  - 555
+  - 340
+  ros:
+    center:
+      x: 5.6
+      y: -1.2
+    size:
+      width: 1.2
+      height: 0.8
+- name: pants2
+  room: room4
+  bbox_px:
+  - 525
+  - 350
+  - 555
+  - 370
+  ros:
+    center:
+      x: 5.6
+      y: -2.4
+    size:
+      width: 1.2
+      height: 0.8
+- name: coat3
+  room: room4
+  bbox_px:
+  - 525
+  - 380
+  - 555
+  - 400
+  ros:
+    center:
+      x: 5.6
+      y: -3.6
+    size:
+      width: 1.2
+      height: 0.8
+- name: dresser2
+  room: room4
+  bbox_px:
+  - 520
+  - 460
+  - 560
+  - 480
+  ros:
+    center:
+      x: 5.6
+      y: -6.8
+    size:
+      width: 1.6
+      height: 0.8
+- name: lamp2
+  room: room4
+  bbox_px:
+  - 565
+  - 460
+  - 575
+  - 470
+  ros:
+    center:
+      x: 6.8
+      y: -6.6
+    size:
+      width: 0.4
+      height: 0.4
+- name: air_conditioner2
+  room: room4
+  bbox_px:
+  - 680
+  - 310
+  - 740
+  - 330
+  ros:
+    center:
+      x: 12.4
+      y: -0.8
+    size:
+      width: 2.4
+      height: 0.8
+- name: bookshelf2
+  room: room4
+  bbox_px:
+  - 680
+  - 350
+  - 740
+  - 450
+  ros:
+    center:
+      x: 12.4
+      y: -4.0
+    size:
+      width: 2.4
+      height: 4.0
+- name: book3
+  room: room4
+  bbox_px:
+  - 685
+  - 355
+  - 695
+  - 365
+  ros:
+    center:
+      x: 11.6
+      y: -2.4
+    size:
+      width: 0.4
+      height: 0.4
+- name: book4
+  room: room4
+  bbox_px:
+  - 700
+  - 355
+  - 710
+  - 365
+  ros:
+    center:
+      x: 12.2
+      y: -2.4
+    size:
+      width: 0.4
+      height: 0.4
+- name: book5
+  room: room4
+  bbox_px:
+  - 715
+  - 355
+  - 725
+  - 365
+  ros:
+    center:
+      x: 12.8
+      y: -2.4
+    size:
+      width: 0.4
+      height: 0.4
+- name: tv_stand2
+  room: room4
+  bbox_px:
+  - 680
+  - 460
+  - 740
+  - 480
+  ros:
+    center:
+      x: 12.4
+      y: -6.8
+    size:
+      width: 2.4
+      height: 0.8
+- name: tv2
+  room: room4
+  bbox_px:
+  - 690
+  - 440
+  - 730
+  - 460
+  ros:
+    center:
+      x: 12.4
+      y: -6.0
+    size:
+      width: 1.6
+      height: 0.8
+- name: tv_remote
+  room: room4
+  bbox_px:
+  - 700
+  - 485
+  - 710
+  - 490
+  ros:
+    center:
+      x: 12.2
+      y: -7.5
+    size:
+      width: 0.4
+      height: 0.2
+- name: ac_remote
+  room: room4
+  bbox_px:
+  - 720
+  - 485
+  - 730
+  - 490
+  ros:
+    center:
+      x: 13.0
+      y: -7.5
+    size:
+      width: 0.4
+      height: 0.2
+- name: bed2
+  room: room4
+  bbox_px:
+  - 530
+  - 490
+  - 650
+  - 560
+  ros:
+    center:
+      x: 7.6
+      y: -9.0
+    size:
+      width: 4.8
+      height: 2.8
+- name: pillow2
+  room: room4
+  bbox_px:
+  - 560
+  - 500
+  - 580
+  - 530
+  ros:
+    center:
+      x: 6.8
+      y: -8.6
+    size:
+      width: 0.8
+      height: 1.2
+- name: quilt2
+  room: room4
+  bbox_px:
+  - 540
+  - 540
+  - 660
+  - 550
+  ros:
+    center:
+      x: 8.0
+      y: -9.8
+    size:
+      width: 4.8
+      height: 0.4
+- name: cushion
+  room: room4
+  bbox_px:
+  - 560
+  - 530
+  - 570
+  - 550
+  ros:
+    center:
+      x: 6.6
+      y: -9.6
+    size:
+      width: 0.4
+      height: 0.8
+- name: nightstand_left
+  room: room4
+  bbox_px:
+  - 500
+  - 500
+  - 520
+  - 560
+  ros:
+    center:
+      x: 4.4
+      y: -9.2
+    size:
+      width: 0.8
+      height: 2.4
+- name: lamp3
+  room: room4
+  bbox_px:
+  - 505
+  - 495
+  - 510
+  - 500
+  ros:
+    center:
+      x: 4.3
+      y: -7.9
+    size:
+      width: 0.2
+      height: 0.2
+- name: alarm_clock2
+  room: room4
+  bbox_px:
+  - 505
+  - 522
+  - 510
+  - 525
+  ros:
+    center:
+      x: 4.3
+      y: -8.94
+    size:
+      width: 0.2
+      height: 0.12

@@ -1,0 +1,46 @@
+<launch>
+
+	<!-- sim.launch -->
+	<arg name="plannerType" default="objectsearch" /> 
+	<!-- Values: random, frontier, cluster, mcts, dmcts, rrt, mmpf， seqtargets , objectsearch-->
+	<arg name="nRobots" default="1" />
+	<arg name="scenario" default="apartment1" />
+	<arg name="restrictComms" default="false" />
+	<arg name="timeMultiplier" default="1" />
+	<arg name="gamma" default="0.8" />
+	<arg name="minRollouts" default="48" />
+	<arg name="rolloutDepth" default="5" />
+	<arg name="explorationFactor" default="0.2" />
+	<arg name="useActionCaching" default="false" />
+	<arg name="randomDisplacementBranching" default="6" />
+	<arg name="frontierClusterActionBranching" default="3" />
+	<arg name="timeDiscountFactor" default="0.9" />
+	<arg name="reuseBranches" default="true" />
+	<arg name="useLocalReward" default="true" />
+
+	<rosparam file="$(find dmce_sim)/config/sim.yaml" command="load" subst_value="true" />
+	<rosparam file="$(find dmce_sim)/config/scenarios/$(arg scenario).yaml" command="load" subst_value="true" />
+	<param name="/sim/nRobots" value="$(arg nRobots)" />
+
+	<include file="$(find dmce_sim)/launch/robots.launch" pass_all_args="true" />
+	
+	<include ns="groundStation" file="$(find dmce_sim)/launch/groundStation.launch">
+		<arg name="plannerType" value="$(arg plannerType)" />
+	</include>
+	<node pkg="dmce_nodes" type="clock" name="ClockServer" output="screen" args="" />
+
+	<!-- viz.launch -->
+	<node pkg="dmce_nodes" type="nodeMain" name="RobotMarkerServer" output="screen" args="0 RobotMarkerServer" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find dmce_sim)/rviz/peng.rviz" />
+	
+    <!-- RobotMapUpdates → 点云转换 -->
+	<node pkg="object_search" type="mapupdate_to_cloud.py" name="mapupdate_to_cloud" output="screen" />
+	<!-- 物体识别节点 -->
+	<node pkg="object_search" type="object_detector_node.py" name="object_detector_node"  />
+
+
+	<!-- 键盘控制节点 -->
+	<!-- <node pkg="object_search" type="vel_key_node.py" name="vel_key_node" output="screen" /> -->
+
+
+</launch>

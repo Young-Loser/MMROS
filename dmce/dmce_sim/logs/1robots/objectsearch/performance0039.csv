@@ -1,0 +1,26 @@
+Package version:,2.1.7
+Scenario:,apartment1
+Connectivity:,global
+Planner type:,objectsearch
+Robot count:,1
+Branch reuse:,enabled
+Local reward:,enabled
+Min. tree age:,48
+Iteration discount:,0.8
+Exploration factor:,0.2
+Min plan value:,0.001
+Action caching:,disabled
+ROS time multiplier:,1
+
+Time [s], Map uncertainty (global) [-], Map uncertainty (GS) [-], Total distance [m], Distance (robot 1) [m], Map uncertainty (robot 1) [-], Navigation failures
+0.36986, 1, 1, 0, 0, 1, 0
+0.775857, 1, 1, 0, 0, 1, 0
+1.11697, 0.984117, 0.978789, 0, 0, 0.978789, 0
+1.45811, 0.984117, 0.978789, 0, 0, 0.978789, 0
+1.84762, 0.984117, 0.978789, 0, 0, 0.978789, 0
+2.22512, 0.984117, 0.978789, 0, 0, 0.978789, 0
+2.59053, 0.984117, 0.978789, 0, 0, 0.978789, 0
+2.96, 0.984117, 0.978789, 0, 0, 0.978789, 0
+3.31298, 0.984117, 0.978789, 0, 0, 0.978789, 0
+3.68633, 0.984117, 0.978789, 0, 0, 0.978789, 0
+4.07607, 0.984117, 0.978789, 0, 0, 0.978789, 0

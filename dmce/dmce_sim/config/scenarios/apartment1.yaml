@@ -1,0 +1,23 @@
+globalMap:
+  scenarioName: "apartment1"
+  resolution: 0.04   # [m]
+  groundTruthImage: "$(find dmce_sim)/maps/apartment1.png"
+
+
+robot:
+  diameter: 0.5 # [m]
+  speed: 1.8   # [m/s]
+  map: # Parameters for the robot's local submap
+    resolution: 0.1 # [m]
+  startingArea:
+    position_x: -14 # [m]
+    position_y: 1.7 # [m]
+
+mcts:
+  randomDisplacement:
+    length: 2.5 # [m] Size of the displacement
+
+# targets:
+#   - [2.0, 1.0]
+#   - [5.0, 3.0]
+#   - [8.0, -2.0]

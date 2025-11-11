@@ -1,0 +1,1092 @@
+[
+    {
+      "name": "sofa",
+      "bbox_px": [
+        120,
+        50,
+        190,
+        80
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "tea_table",
+      "bbox_px": [
+        140,
+        90,
+        160,
+        110
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "cup",
+      "bbox_px": [
+        150,
+        100,
+        155,
+        105
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "side_table",
+      "bbox_px": [
+        210,
+        50,
+        230,
+        70
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "tv_stand",
+      "bbox_px": [
+        110,
+        150,
+        190,
+        160
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "tv",
+      "bbox_px": [
+        120,
+        140,
+        180,
+        150
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "bookshelf",
+      "bbox_px": [
+        130,
+        170,
+        150,
+        220
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "book1",
+      "bbox_px": [
+        135,
+        175,
+        145,
+        180
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "book2",
+      "bbox_px": [
+        135,
+        185,
+        145,
+        190
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "dining_table",
+      "bbox_px": [
+        280,
+        100,
+        350,
+        120
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "dining_chair1",
+      "bbox_px": [
+        270,
+        90,
+        280,
+        100
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "dining_chair2",
+      "bbox_px": [
+        350,
+        90,
+        360,
+        100
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "dining_chair3",
+      "bbox_px": [
+        270,
+        120,
+        280,
+        130
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "dining_chair4",
+      "bbox_px": [
+        350,
+        120,
+        360,
+        130
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "plate",
+      "bbox_px": [
+        300,
+        110,
+        310,
+        115
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "cup2",
+      "bbox_px": [
+        315,
+        110,
+        320,
+        115
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "fork",
+      "bbox_px": [
+        305,
+        116,
+        310,
+        118
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "vase",
+      "bbox_px": [
+        380,
+        50,
+        385,
+        60
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "mirror",
+      "bbox_px": [
+        390,
+        70,
+        420,
+        90
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "trash_can",
+      "bbox_px": [
+        380,
+        150,
+        390,
+        160
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "coat_rack",
+      "bbox_px": [
+        400,
+        180,
+        405,
+        200
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "coat",
+      "bbox_px": [
+        395,
+        185,
+        410,
+        195
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "hat",
+      "bbox_px": [
+        407,
+        175,
+        412,
+        180
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "water_dispenser",
+      "bbox_px": [
+        420,
+        150,
+        440,
+        170
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "cup3",
+      "bbox_px": [
+        430,
+        140,
+        435,
+        145
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "door_room0",
+      "bbox_px": [
+        263,
+        226,
+        287,
+        230
+      ],
+      "room": "room0"
+    },
+    {
+      "name": "wardrobe",
+      "bbox_px": [
+        480,
+        60,
+        520,
+        180
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "shirt",
+      "bbox_px": [
+        485,
+        50,
+        515,
+        70
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "pants",
+      "bbox_px": [
+        485,
+        80,
+        515,
+        100
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "coat2",
+      "bbox_px": [
+        485,
+        110,
+        515,
+        130
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "dresser",
+      "bbox_px": [
+        480,
+        210,
+        520,
+        220
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "chair",
+      "bbox_px": [
+        530,
+        210,
+        540,
+        220
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "mirror2",
+      "bbox_px": [
+        490,
+        200,
+        510,
+        210
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "comb",
+      "bbox_px": [
+        495,
+        205,
+        500,
+        208
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "lamp",
+      "bbox_px": [
+        505,
+        205,
+        510,
+        210
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "bed",
+      "bbox_px": [
+        570,
+        80,
+        670,
+        180
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "pillow",
+      "bbox_px": [
+        570,
+        90,
+        590,
+        110
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "quilt",
+      "bbox_px": [
+        560,
+        120,
+        680,
+        170
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "left_nightstand",
+      "bbox_px": [
+        540,
+        100,
+        550,
+        120
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "left_lamp",
+      "bbox_px": [
+        545,
+        95,
+        548,
+        100
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "alarm_clock",
+      "bbox_px": [
+        545,
+        122,
+        550,
+        125
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "right_nightstand",
+      "bbox_px": [
+        680,
+        100,
+        690,
+        120
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "right_lamp",
+      "bbox_px": [
+        695,
+        95,
+        698,
+        100
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "scale",
+      "bbox_px": [
+        625,
+        185,
+        645,
+        190
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "air_conditioner",
+      "bbox_px": [
+        620,
+        210,
+        650,
+        220
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "door_room1",
+      "bbox_px": [
+        573,
+        226,
+        597,
+        230
+      ],
+      "room": "room1"
+    },
+    {
+      "name": "door_room2",
+      "bbox_px": [
+        128,
+        300,
+        152,
+        304
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "door_room3",
+      "bbox_px": [
+        358,
+        300,
+        382,
+        304
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "door_room4",
+      "bbox_px": [
+        618,
+        300,
+        642,
+        304
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "cabinet_horizontal",
+      "bbox_px": [
+        40,
+        320,
+        100,
+        350
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "cabinet_vertical",
+      "bbox_px": [
+        40,
+        350,
+        60,
+        450
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "stove",
+      "bbox_px": [
+        70,
+        360,
+        90,
+        380
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "tap",
+      "bbox_px": [
+        85,
+        360,
+        95,
+        365
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "range_hood",
+      "bbox_px": [
+        65,
+        340,
+        95,
+        350
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "microwave",
+      "bbox_px": [
+        100,
+        360,
+        120,
+        380
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "oven",
+      "bbox_px": [
+        70,
+        390,
+        90,
+        410
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "dishwasher",
+      "bbox_px": [
+        70,
+        420,
+        90,
+        450
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "bowl1",
+      "bbox_px": [
+        80,
+        430,
+        85,
+        435
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "fridge",
+      "bbox_px": [
+        40,
+        460,
+        80,
+        540
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "apple",
+      "bbox_px": [
+        85,
+        470,
+        90,
+        475
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "banana",
+      "bbox_px": [
+        85,
+        480,
+        90,
+        485
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "vegetables",
+      "bbox_px": [
+        85,
+        490,
+        90,
+        500
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "table_center",
+      "bbox_px": [
+        150,
+        400,
+        230,
+        430
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "cutting_board",
+      "bbox_px": [
+        160,
+        435,
+        180,
+        445
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "knife",
+      "bbox_px": [
+        185,
+        435,
+        190,
+        445
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "pan",
+      "bbox_px": [
+        200,
+        435,
+        220,
+        450
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "scale",
+      "bbox_px": [
+        155,
+        390,
+        165,
+        400
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "spoon",
+      "bbox_px": [
+        170,
+        390,
+        175,
+        395
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "chopsticks",
+      "bbox_px": [
+        180,
+        390,
+        185,
+        395
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "plate",
+      "bbox_px": [
+        160,
+        440,
+        170,
+        450
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "bowl2",
+      "bbox_px": [
+        175,
+        440,
+        180,
+        445
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "cup4",
+      "bbox_px": [
+        185,
+        440,
+        190,
+        445
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "trash_can2",
+      "bbox_px": [
+        180,
+        460,
+        200,
+        480
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "coffee_machine",
+      "bbox_px": [
+        140,
+        450,
+        160,
+        470
+      ],
+      "room": "room2"
+    },
+    {
+      "name": "shower",
+      "bbox_px": [
+        280,
+        360,
+        290,
+        370
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "bath_mirror",
+      "bbox_px": [
+        300,
+        360,
+        330,
+        390
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "soap",
+      "bbox_px": [
+        335,
+        365,
+        340,
+        370
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "shampoo",
+      "bbox_px": [
+        335,
+        375,
+        340,
+        380
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "bath_cabinet",
+      "bbox_px": [
+        280,
+        400,
+        320,
+        420
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "facial_cleanser",
+      "bbox_px": [
+        285,
+        405,
+        290,
+        410
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "toothbrush_paste",
+      "bbox_px": [
+        295,
+        405,
+        300,
+        410
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "washing_machine",
+      "bbox_px": [
+        420,
+        360,
+        450,
+        410
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "dirty_clothes",
+      "bbox_px": [
+        420,
+        420,
+        450,
+        430
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "toilet",
+      "bbox_px": [
+        340,
+        500,
+        380,
+        550
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "disinfectant",
+      "bbox_px": [
+        335,
+        490,
+        340,
+        495
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "toilet_paper",
+      "bbox_px": [
+        385,
+        490,
+        390,
+        495
+      ],
+      "room": "room3"
+    },
+    {
+      "name": "wardrobe2",
+      "bbox_px": [
+        520,
+        310,
+        560,
+        450
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "fitting_mirror",
+      "bbox_px": [
+        565,
+        310,
+        590,
+        350
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "shirt2",
+      "bbox_px": [
+        525,
+        320,
+        555,
+        340
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "pants2",
+      "bbox_px": [
+        525,
+        350,
+        555,
+        370
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "coat3",
+      "bbox_px": [
+        525,
+        380,
+        555,
+        400
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "dresser2",
+      "bbox_px": [
+        520,
+        460,
+        560,
+        480
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "lamp2",
+      "bbox_px": [
+        565,
+        460,
+        575,
+        470
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "air_conditioner2",
+      "bbox_px": [
+        680,
+        310,
+        740,
+        330
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "bookshelf2",
+      "bbox_px": [
+        680,
+        350,
+        740,
+        450
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "book3",
+      "bbox_px": [
+        685,
+        355,
+        695,
+        365
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "book4",
+      "bbox_px": [
+        700,
+        355,
+        710,
+        365
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "book5",
+      "bbox_px": [
+        715,
+        355,
+        725,
+        365
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "tv_stand2",
+      "bbox_px": [
+        680,
+        460,
+        740,
+        480
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "tv2",
+      "bbox_px": [
+        690,
+        440,
+        730,
+        460
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "tv_remote",
+      "bbox_px": [
+        700,
+        485,
+        710,
+        490
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "ac_remote",
+      "bbox_px": [
+        720,
+        485,
+        730,
+        490
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "bed2",
+      "bbox_px": [
+        530,
+        490,
+        650,
+        560
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "pillow2",
+      "bbox_px": [
+        560,
+        500,
+        580,
+        530
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "quilt2",
+      "bbox_px": [
+        540,
+        540,
+        660,
+        550
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "cushion",
+      "bbox_px": [
+        560,
+        530,
+        570,
+        550
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "nightstand_left",
+      "bbox_px": [
+        500,
+        500,
+        520,
+        560
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "lamp3",
+      "bbox_px": [
+        505,
+        495,
+        510,
+        500
+      ],
+      "room": "room4"
+    },
+    {
+      "name": "alarm_clock2",
+      "bbox_px": [
+        505,
+        522,
+        510,
+        525
+      ],
+      "room": "room4"
+    }
+  ]

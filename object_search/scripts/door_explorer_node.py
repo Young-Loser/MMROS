@@ -11,8 +11,6 @@
 import rospy
 import json
 import time
-import math
-import random
 from dmce_msgs.srv import GetPlan, GetPlanRequest
 from dmce_msgs.msg import RobotPosition
 from dmce_msgs.msg import NavigationFailureSignal
@@ -50,6 +48,7 @@ class DoorExplorerNode:
     # ---------------- 回调 ----------------
     def pos_callback(self, msg):
         self.robot_pos = (msg.x_position, msg.y_position)
+        print(f"[位置] x = {msg.x_position:6.2f} | y = {msg.y_position:6.2f}", end="\r")
 
     def objects_callback(self, msg):
         """解析 object_detector_node 发布的物体检测结果"""
@@ -66,10 +65,19 @@ class DoorExplorerNode:
                 if "door" in name or category == "door":
                     if name not in self.detected_doors:
                         self.detected_doors[name] = (x, y)
-                        # rospy.loginfo(f"🚪 新发现门：{name} (x={x:.2f}, y={y:.2f})")
+                        rospy.loginfo(f"🚪 新发现门：{name} (x={x:.2f}, y={y:.2f})")
 
         except Exception as e:
             rospy.logwarn(f"⚠️ 无法解析检测结果: {e}")
+        
+    def clear_target(self):
+        """彻底移除 /objectsearch/next_target 参数"""
+        try:
+            if rospy.has_param("/objectsearch/next_target"):
+                rospy.delete_param("/objectsearch/next_target")
+                rospy.loginfo("🧹 已删除参数 /objectsearch/next_target")
+        except Exception as e:
+            rospy.logwarn(f"⚠️ 删除参数失败: {e}")
 
     # ---------------- 移动函数 ----------------
     def go_to(self, target):
@@ -82,59 +90,11 @@ class DoorExplorerNode:
 
             rospy.set_param("/objectsearch/next_target", {"x": target[0], "y": target[1]})
             self.plan_service(req)
-            print(rospy.get_param("/objectsearch/next_target"))
-            # rospy.loginfo(f"🎯 正在前往目标点 ({target[0]:.2f}, {target[1]:.2f})")
+            # print(rospy.get_param("/objectsearch/next_target"))
+            rospy.loginfo(f"🎯 正在前往目标点 ({target[0]:.2f}, {target[1]:.2f})")
         except Exception as e:
             rospy.logerr(f"❌ 调用 GlobalPlannerService 失败: {e}")
     
-    def go_to_segmented(self, target, step_min=1.5, step_max=2, offset=0.1,threshold=0.1):
-        """
-        分段前往目标点：
-        - 每次前进 1~1.5 米
-        - 不直接给终点
-        """
-        cur_x, cur_y = self.robot_pos
-        dx = target[0] - cur_x
-        dy = target[1] - cur_y
-        dist = math.hypot(dx, dy)
-
-        if dist < threshold:
-            rospy.loginfo("✅ 已到达终点")
-            return
-
-        # --- 计算下一步的目标 ---
-        step = random.uniform(step_min, step_max)# 限制在 [step_min, step_max]
-        ratio = step / dist
-        next_x = cur_x + dx * ratio
-        next_y = 1.7
-
-        # ✅ 添加轻微随机扰动（±0.15 m），防止路径卡死
-        offset_x = random.uniform(0-offset, offset)
-        offset_y = random.uniform(0-offset, offset)
-        next_x += offset_x
-        next_y += offset_y
-
-        rospy.loginfo(f"➡️ 下一段目标: ({next_x:.2f}, {next_y:.2f})  剩余距离: {dist:.2f} m")
-
-        # --- 发送目标 ---
-        self.go_to((next_x, next_y))  # 调用你原本的 go_to 函数
-
-
-
-    # def wait_until_reached(self, target, threshold=0.4, timeout=90):
-    #     """等待到达目标点"""
-    #     start = time.time()
-    #     while not rospy.is_shutdown():
-    #         cur_x, cur_y = self.robot_pos
-    #         dist = ((cur_x - target[0])**2 + (cur_y - target[1])**2)**0.5
-    #         if dist < threshold:
-    #             # rospy.loginfo(f"✅ 已到达目标 ({target[0]:.2f}, {target[1]:.2f})")
-    #             return True
-    #         if time.time() - start > timeout:
-    #             rospy.logwarn("⚠️ 到达超时，跳过该目标")
-    #             return False
-    #         rospy.sleep(0.5)
-
     def get_next_door(self):
         """返回离当前位置最近的、尚未访问的门"""
         candidates = {n: p for n, p in self.detected_doors.items() if n not in self.visited_doors}
@@ -162,28 +122,30 @@ class DoorExplorerNode:
             dist_to_end = ((self.robot_pos[0] - self.end_point[0])**2 +
                         (self.robot_pos[1] - self.end_point[1])**2)**0.5
             if dist_to_end < self.end_reach_threshold and state == "GO_TO_END":
-                # rospy.loginfo("🏁 已到达走廊终点，探索任务结束！")
+                self.clear_target()
+                rospy.loginfo("🏁 已到达走廊终点，探索任务结束！")
                 break
 
             # === 状态：前往终点 ===
             if state == "GO_TO_END":
                 next_name, next_pos = self.get_next_door()
                 if next_name is not None:
-                    # rospy.loginfo(f"🚪 检测到新门 [{next_name}]，前往探索。")
+                    rospy.loginfo(f"🚪 检测到新门 [{next_name}]，前往探索。")
                     self.go_to(next_pos)
                     current_target = (next_name, next_pos)
                     state = "VISIT_DOOR"
                 else:
-                    # rospy.loginfo("➡️ 没有检测到新门，继续前往终点。")
-                    self.go_to_segmented(self.end_point)
+                    rospy.loginfo("➡️ 没有检测到新门，继续前往终点。")
+                    self.go_to(self.end_point)
                     current_target = ("end", self.end_point)
 
             # === 状态：前往门 ===
             elif state == "VISIT_DOOR":
                 name, pos = current_target
                 dist = ((self.robot_pos[0] - pos[0])**2 + (self.robot_pos[1] - pos[1])**2)**0.5
-                if dist < 0.4:
-                    # rospy.loginfo(f"⏸️ 已到达门 [{name}]，观察环境...")
+                if dist < 0.1:
+                    rospy.loginfo(f"⏸️ 已到达门 [{name}]，观察环境...")
+                    self.clear_target()
                     state = "OBSERVE_DOOR"
 
             # === 状态：观察门 ===
@@ -201,18 +163,18 @@ class DoorExplorerNode:
 
                 self.visited_doors.add(name)
                 self.exploration_log[name] = sorted(seen)
-                # rospy.loginfo(f"📋 门 [{name}] 观察完毕: {', '.join(seen) if seen else '无'}")
+                rospy.loginfo(f"📋 门 [{name}] 观察完毕: {', '.join(seen) if seen else '无'}")
 
                 # 判断是否还有别的门
                 next_name, next_pos = self.get_next_door()
                 if next_name is not None:
-                    # rospy.loginfo(f"🧭 还有未访问的门 [{next_name}]，继续前往。")
+                    rospy.loginfo(f"🧭 还有未访问的门 [{next_name}]，继续前往。")
                     self.go_to(next_pos)
                     current_target = (next_name, next_pos)
                     state = "VISIT_DOOR"
                 else:
                     # rospy.loginfo("➡️ 没有更多门，继续前往终点。")
-                    self.go_to_segmented(self.end_point)
+                    self.go_to(self.end_point)
                     current_target = ("end", self.end_point)
                     state = "GO_TO_END"
 

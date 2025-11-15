@@ -48,6 +48,7 @@ class KeyboardTeleopNode:
     def pos_callback(self, msg):
         """更新机器人位置"""
         self.pos = np.array([msg.x_position, msg.y_position])
+        print(f"[位置] x = {msg.x_position:6.2f} | y = {msg.y_position:6.2f}", end="\r")
 
     def cloud_callback(self, msg):
         """根据点云数据更新最近障碍距离"""

@@ -3,7 +3,7 @@
 	<!-- sim.launch -->
 	<arg name="plannerType" default="objectsearch" /> 
 	<!-- Values: random, frontier, cluster, mcts, dmcts, rrt, mmpf， seqtargets , objectsearch-->
-	<arg name="nRobots" default="1" />
+	<arg name="nRobots" default="3" />
 	<arg name="scenario" default="apartment1" />
 	<arg name="restrictComms" default="false" />
 	<arg name="timeMultiplier" default="1" />

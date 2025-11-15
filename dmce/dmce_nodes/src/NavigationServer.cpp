@@ -63,44 +63,9 @@ namespace dmce {
 
 	}
 
-	// void NavigationServer::update_(ros::Duration timeStep) {
-
-	// 	// ✅ 新增：cmd_vel 控制优先级
-	// 	if (use_cmd_vel_) {
-	// 		double dt = timeStep.toSec();
-
-	// 		pos_t cur = navigation_->getRobotPosition();
-	// 		cur.x() += (vx_ * cos(theta_) - vy_ * sin(theta_)) * dt;
-	// 		cur.y() += (vx_ * sin(theta_) + vy_ * cos(theta_)) * dt;
-	// 		theta_ += omega_ * dt;
-
-	// 		// ✅ 改这里
-	// 		navigation_->overrideRobotPosition(cur);
-
-	// 		publishRobotPosition_();
-	// 		return;
-	// 	}
-	
-	// 	if (navigation_->hasGoal())
-	// 		checkAbortConditions_(timeStep);
-
-	// 	publishPlan_(navigation_->getCurrentPlan(), globalPlanPublisher_);
-	// 	publishPlan_(navigation_->getCurrentPath(), pathPublisher_);
-
-	// 	bool navigationSuccess = navigateToGoal_(timeStep);
-
-	// 	if (!navigation_->hasGoal()) {
-	// 		actionClient_.cancelAllGoals();
-	// 		tryFetchNewPlan_(navigationSuccess);
-	// 		if (navigation_->hasGoal())
-	// 			sendGoalToPathfinding_();
-	// 	}
-
-	// 	publishRobotPosition_();
-	// }
 
 	void NavigationServer::update_(ros::Duration timeStep) {
-		// ✅ 键盘模式优先级（这里逻辑没问题）
+		// ✅ 键盘模式优先级
 		if (use_cmd_vel_) {
 			double dt = timeStep.toSec();
 			pos_t cur = navigation_->getRobotPosition();
@@ -112,9 +77,6 @@ namespace dmce {
 			return;
 		}
 
-		static pos_t lastGoal(999, 999); // 初始化为不可能的值
-	    static bool firstGoalSet = false;
-		static ros::Time last_call_time = ros::Time::now();
 		bool navigationSuccess = navigateToGoal_(timeStep);
 
 		if (navigation_->hasGoal())
@@ -151,19 +113,63 @@ namespace dmce {
 		if (!navigation_->hasGoal()) {
 			signalFailure_ = !navigation_->wasLastPlanSuccessful();
 			if (signalFailure_)
-				logWarn("update_", "Global plan failed! Resetting.");
+				// logWarn("update_", "Global plan failed! Resetting.");
 			return !signalFailure_;
 		}
 
 		return true;
 	}
 
+	// void NavigationServer::checkAbortConditions_(const ros::Duration& timeStep) {
+	// 	currentPlanAge_ += timeStep.toSec();
+	// 	bool planTimedOut = currentPlanAge_ > maxPlanAge_;
+	// 	bool goalUnreachable = consecutivePathfindingFailures_ > maxPathfindingFailures_;
+
+	// 	if (planTimedOut)
+	// 		logWarn("update_", "Plan timed out after %.2fs. Resetting.", currentPlanAge_);
+	// 	else if (goalUnreachable) {
+	// 		logError("update_", "Stuck on unreachable goal! Resetting.");
+	// 		consecutivePathfindingFailures_ = 0;
+	// 		dmce_msgs::NavigationFailureSignal failureMsg;
+	// 		failureMsg.robotId = robotId_;
+	// 		failurePublisher_.publish(failureMsg);
+	// 	}
+
+	// 	if (planTimedOut || goalUnreachable) {
+	// 		navigation_->resetPlan();
+	// 		currentPlanAge_ = 0;
+	// 	}
+	// }
+
 	void NavigationServer::checkAbortConditions_(const ros::Duration& timeStep) {
 		currentPlanAge_ += timeStep.toSec();
 		bool planTimedOut = currentPlanAge_ > maxPlanAge_;
 		bool goalUnreachable = consecutivePathfindingFailures_ > maxPathfindingFailures_;
+		// ✅ 检查 PlannerServer 的目标变化（通过 planner_）
+		bool goalChanged = false;
 
-		if (planTimedOut)
+
+		if (navigation_->hasGoal()){
+		// ✅ 新增：检测是否目标点已被 ObjectSearchPlanner 更新
+			XmlRpc::XmlRpcValue target_param;
+			if (ros::param::get("/objectsearch/next_target", target_param)) {
+				double target_x = static_cast<double>(target_param["x"]);
+				double target_y = static_cast<double>(target_param["y"]);
+
+				pos_t current_goal = navigation_->getCurrentGoal();
+				double dx = current_goal.x() - target_x;
+				double dy = current_goal.y() - target_y;
+				double diff = std::sqrt(dx * dx + dy * dy);
+
+				if (diff > 1e-3) {  // ⚙️ 距离超过一定范围，认为目标改变
+					// ✅ 重置路径并强制重新规划
+				goalChanged = true;
+				}
+			}
+
+		}
+		
+		else if (planTimedOut)
 			logWarn("update_", "Plan timed out after %.2fs. Resetting.", currentPlanAge_);
 		else if (goalUnreachable) {
 			logError("update_", "Stuck on unreachable goal! Resetting.");
@@ -173,11 +179,13 @@ namespace dmce {
 			failurePublisher_.publish(failureMsg);
 		}
 
-		if (planTimedOut || goalUnreachable) {
+		// ✅ 原有逻辑：如果确实是超时或无法到达，也重置
+		if (planTimedOut || goalUnreachable || goalChanged) {
 			navigation_->resetPlan();
 			currentPlanAge_ = 0;
 		}
 	}
+
 
 	void NavigationServer::navigationMapCallback_(const grid_map_msgs::GridMap& mapMsg) {
 		navigation_->updateNavigationMap(OccupancyMap(mapMsg));
@@ -269,7 +277,7 @@ namespace dmce {
 			if (navigation_->hasGoal()) {
 				currentPlanAge_ = 0;
 			} else {
-				logError("tryFetchNewPlan_", "Received invalid plan!");
+				// logError("tryFetchNewPlan_", "Received invalid plan!");
 			}
 		}
 

@@ -193,17 +193,14 @@ namespace dmce {
 
 		planner_->setPosition({request.currentPosition.x_position, request.currentPosition.y_position});
 		if (!request.success) {
-			logWarn("planServiceCallback_", "Signalling navigation failure!");
+			// logWarn("planServiceCallback_", "Signalling navigation failure!");
 			planner_->signalNavigationFailure();
 		}
 		bool success;
 		std::tie(success, response.plan.poses) = planner_->getLatestPlan();
 		if (success)
-			// logInfo("planServiceCallback_", "Plan size: %zu", response.plan.poses.size());
-			// ✅ 打印目标点（最后一个点）
 			if (!response.plan.poses.empty()) {
 				const auto& goal = response.plan.poses.back().pose.position;
-				// logInfo("planServiceCallback_", "target: (x=%.2f, y=%.2f)", goal.x, goal.y);
 			}
 
 		return success;

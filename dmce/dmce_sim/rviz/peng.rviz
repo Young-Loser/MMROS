@@ -76,8 +76,9 @@ Visualization Manager:
       Name: Marker
       Namespaces:
         connectivity: false
-        robot1/clusters: true
         robot1/trace: false
+        robot2/trace: false
+        robot3/trace: false
         robots: true
       Queue Size: 100
       Value: true

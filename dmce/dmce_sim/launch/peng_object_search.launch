@@ -33,11 +33,15 @@
 	<node pkg="dmce_nodes" type="nodeMain" name="RobotMarkerServer" output="screen" args="0 RobotMarkerServer" />
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find dmce_sim)/rviz/peng.rviz" />
 	
-    <!-- RobotMapUpdates → 点云转换 -->
-	<node pkg="object_search" type="mapupdate_to_cloud.py" name="mapupdate_to_cloud" output="screen" />
-	<!-- 物体识别节点 -->
-	<node pkg="object_search" type="object_detector_node.py" name="object_detector_node"  />
+	<!-- RobotMapUpdates → 点云转换 -->
+	<node pkg="object_search" type="mapupdate_to_cloud.py" name="mapupdate_to_cloud" output="screen">
+		<param name="nRobots" value="$(arg nRobots)" />
+	</node>
 
+	<!-- 物体识别节点 -->
+	<node pkg="object_search" type="object_detector_node.py" name="object_detector_node">
+		<param name="nRobots" value="$(arg nRobots)" />
+	</node>
 
 	<!-- 键盘控制节点 -->
 	<!-- <node pkg="object_search" type="vel_key_node.py" name="vel_key_node" output="screen" /> -->
